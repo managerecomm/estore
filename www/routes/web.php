@@ -12,5 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('site.home.index');
 });
+
+Route::get('/categories', 'Site\ResourceCategoryController@index');
+Route::get('/resources', 'Site\ResourceController@index');
