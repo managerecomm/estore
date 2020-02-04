@@ -2,8 +2,12 @@
 
 @section('content')
     <h1>Site Resources Index View</h1>
-    <table class="table">
-        <thead>
+    <div class="container">
+        <div class="ibox">
+        <div class="ibox-head">Таблица ресурсов</div>
+        <div class="ibox-body">
+            <table class="table table-bordered">
+        <thead class="thead-default">
         <tr>
             <th>ID</th>
             <th>Parent</th>
@@ -28,5 +32,8 @@
         @endforeach
         </tbody>
     </table>
-    {{ $resources->links() }}
+            {{ $resources->links() }}
+        </div>
+        </div>
+    </div>
 @endsection
