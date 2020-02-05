@@ -17,3 +17,18 @@ Route::get('/', function () {
 
 Route::get('/categories', 'Site\ResourceCategoryController@index');
 Route::get('/resources', 'Site\ResourceController@index');
+
+/* Admin */
+
+$settings = [
+    'namespace' => 'Admin',
+    'prefix' => 'admin/resource',
+];
+
+Route::group($settings, function(){
+    $methods = ['index', 'create', 'store', 'edit', 'update', 'destroy'];
+    Route::resource('category','ResourceCategoryController')
+        ->only($methods)
+        ->names('admin.resource.category')
+    ;
+});
