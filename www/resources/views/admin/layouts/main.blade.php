@@ -22,8 +22,10 @@
 </header>
     @yield('content')
 
-    <script src="theme/js/jquery.min.js"></script>
-    <script src="//unpkg.com/@popperjs/core@2"></script>
-    <script src="theme/js/bootstrap.min.js"></script>
+    <script src="/theme/js/jquery.min.js"></script>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="/theme/js/bootstrap.min.js"></script>
+    <script src="/theme/js/jquery.cookie.js"></script>
+    <script src="/theme/js/custom.js"></script>
 </body>
 </html>

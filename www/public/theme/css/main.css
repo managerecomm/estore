@@ -3076,7 +3076,7 @@ a.text-light:hover, a.text-light:focus {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 66px;
+  height: 60px;
   position: relative;
   background-color: #fff;
   margin: 0;

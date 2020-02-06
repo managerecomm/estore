@@ -10,25 +10,27 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+$admin_url = env('APP_ADMIN_URL');
 
 Route::get('/', function () {
     return view('site.home.index');
 });
 
-Route::get('/categories', 'Site\ResourceCategoryController@index');
-Route::get('/resources', 'Site\ResourceController@index');
+Route::get('/'.$admin_url, function () {
+    return view('admin.home.index');
+});
 
 /* Admin */
 
 $settings = [
     'namespace' => 'Admin',
-    'prefix' => 'admin/resource',
+    'prefix' => $admin_url.'/resource',
 ];
 
 Route::group($settings, function(){
     $methods = ['index', 'create', 'store', 'edit', 'update', 'destroy'];
-    Route::resource('category','ResourceCategoryController')
+    Route::resource('category','AdminResourceCategoryController')
         ->only($methods)
-        ->names('admin.resource.category')
+        ->names('$admin_url.resource.category')
     ;
 });
